@@ -1,0 +1,112 @@
+:root {
+ --site-primary:#1F5B4A;
+ --site-secondary:#E8B86D;
+ --site-background:#F7F5EF;
+ --site-on-primary:#FFFFFF;
+ --site-on-secondary:#24251F;
+ --site-on-background:#24251F;
+ --site-font-body:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+ --site-font-heading:Georgia, "Times New Roman", serif;
+ --site-heading-scale:1;
+ --site-spacing-scale:1;
+ --site-radius-scale:1;
+ --site-decoration-opacity:1;
+}
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; font-family:var(--site-font-body); background:light-dark(#F7F5EF,#171A18); color:light-dark(#24251F,#F0F0E9); line-height:1.6; }
+#app { min-height:100vh; background-color:var(--site-background); color:var(--site-on-background); border-radius:0; }
+a { color:inherit; }
+.wrap { width:min(1120px, calc(100% - 40px)); margin:0 auto; }
+nav { display:flex; justify-content:space-between; align-items:center; padding:22px 0; border-bottom:1px solid rgba(36,37,31,.15); gap:18px; }
+.logo { font-weight:850; letter-spacing:-.06em; font-size:1.15rem; }
+.logo span { color:var(--site-primary); }
+.navlinks { display:flex; flex-wrap:wrap; gap:20px; font-size:.82rem; }
+.navlinks a { text-decoration:none; opacity:.78; }
+.hero { padding:80px 0 70px; display:grid; grid-template-columns:1.25fr .75fr; gap:50px; align-items:center; }
+.kicker { color:var(--site-primary); text-transform:uppercase; letter-spacing:.16em; font-size:.72rem; font-weight:800; }
+h1,h2,h3 { font-family:var(--site-font-heading); font-weight:500; line-height:1.08; letter-spacing:-.035em; }
+h1 { font-size:calc(clamp(3.1rem, 7vw, 6.6rem) * var(--site-heading-scale)); margin:18px 0 22px; max-width:760px; }
+h2 { font-size:calc(clamp(2.1rem, 4vw, 3.5rem) * var(--site-heading-scale)); margin:10px 0 16px; }
+h3 { font-size:1.5rem; margin:0 0 10px; }
+.lead { font-size:1.12rem; max-width:650px; color:light-dark(#5B5D53,#C4C6BC); }
+.hero-art { background:var(--site-primary); color:white; border-radius:calc(28px * var(--site-radius-scale)); min-height:330px; padding:28px; position:relative; overflow:hidden; display:flex; flex-direction:column; justify-content:space-between; }
+.hero-art:before,.hero-art:after { content:""; position:absolute; border:1px solid rgba(255,255,255,.25); border-radius:50%; width:300px; height:300px; right:-80px; top:-55px; opacity:var(--site-decoration-opacity); }
+.hero-art:after { width:220px; height:220px; right:-40px; top:-15px; }
+.bowl { font-size:7rem; position:relative; z-index:1; line-height:1; }
+.hero-art p { position:relative; z-index:1; max-width:230px; font-family:var(--site-font-heading); font-size:1.65rem; line-height:1.2; margin:0; }
+.stats { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin:0 0 72px; }
+.stat { padding:22px; background:light-dark(#FFFFFF,#252925); border:1px solid light-dark(#E5E1D6,#383E38); border-radius:calc(16px * var(--site-radius-scale)); }
+.stat strong { display:block; font-family:var(--site-font-heading); font-size:2.1rem; font-weight:500; color:var(--site-primary); line-height:1.2; }
+.stat span { font-size:.83rem; color:light-dark(#686A60,#B9BDB3); }
+section { padding:64px 0; border-top:1px solid rgba(36,37,31,.13); }
+.section-head { display:block; max-width:900px; margin-bottom:32px; }
+.section-head p { margin:14px 0 0; max-width:780px; color:light-dark(#5B5D53,#C4C6BC); }
+.tag { display:inline-block; background:light-dark(#E5EDE7,#2A3930); color:var(--site-primary); padding:5px 10px; border-radius:99px; font-size:.75rem; font-weight:750; }
+.cardgrid { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
+.card { background:light-dark(#FFFFFF,#252925); border:1px solid light-dark(#E5E1D6,#383E38); border-radius:calc(18px * var(--site-radius-scale)); padding:24px; min-width:0; }
+.card p { color:light-dark(#66685F,#C4C6BC); margin:8px 0 0; font-size:.92rem; }
+.chart {
+  display: block;
+  width: 100%;
+  height: 260px;
+  min-height: 260px;
+  margin-top: 14px;
+  overflow: hidden;
+}
+
+.chart svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.placeholder { border:1.5px dashed light-dark(#B8B6AA,#5B6258); border-radius:14px; min-height:190px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:22px; margin-top:16px; background:light-dark(#F9F8F3,#202420); }
+.placeholder b { color:var(--site-primary); }
+.placeholder small { display:block; max-width:360px; margin-top:7px; color:light-dark(#77796F,#B9BDB3); }
+.chart-note { font-size:.8rem; margin-top:10px; color:light-dark(#77796F,#B9BDB3); }
+.finding { display:grid; grid-template-columns:48px 1fr; gap:15px; padding:18px 0; border-bottom:1px solid light-dark(#E5E1D6,#383E38); }
+.finding .num { font-family:var(--site-font-heading); color:var(--site-primary); font-size:1.8rem; }
+.method { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+.method article { padding:20px; border-radius:14px; background:light-dark(#EDEBE2,#252925); }
+.method article p { font-size:.9rem; margin-bottom:0; color:light-dark(#66685F,#C4C6BC); }
+footer { background:var(--site-primary); color:#fff; padding:38px 0; margin-top:30px; }
+footer .wrap { display:flex; justify-content:space-between; gap:25px; align-items:end; }
+footer p { margin:0; opacity:.78; font-size:.85rem; }
+@media(max-width:760px) {
+ .hero { grid-template-columns:1fr; padding:50px 0; gap:28px; }
+ .hero-art { min-height:240px; }
+ .stats { grid-template-columns:repeat(2,1fr); margin-bottom:35px; }
+ .section-head { display:block; }
+ .cardgrid,.method { grid-template-columns:1fr; }
+ .navlinks { gap:10px; font-size:.75rem; }
+ section { padding:45px 0; }
+ footer .wrap { align-items:start; flex-direction:column; }
+}
+
+
+/* Static plots generated in Python / matplotlib */
+.chart-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 440px;
+  object-fit: contain;
+  margin-top: 14px;
+  border-radius: 10px;
+  background: #fff;
+}
+.card > img:not(.chart-image) {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 520px;
+  object-fit: contain;
+  margin-top: 16px;
+  border-radius: 10px;
+}
+.chart { height: auto; min-height: 0; overflow: visible; }
+@media (max-width: 760px) {
+  .chart-image { max-height: none; }
+  .card { padding: 18px; }
+}
